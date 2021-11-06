@@ -1,5 +1,5 @@
 
-## 💻 Processo Trainee - Semana 1
+# 💻 Processo Trainee - Semana 1
 <!--ts-->
     ✅* [Apresentação setor de projetos]
     ✅* [Ferramentas utilizadas na OCCAM]
@@ -11,23 +11,27 @@
 <!--te-->
 
 
-## ⚙️ Passo a passo
+# ⚙️ Passo a passo
 
- # Whimsical é o espaço de trabalho visual para reflexão e colaboração, combinando fluxogramas, wireframes, notas adesivas, mapas mentais e documentos.
+## Whimsical 
+É um espaço de trabalho visual para reflexão e colaboração, combinando fluxogramas, wireframes, notas adesivas, mapas mentais e documentos.
 Crie uma conta no Whimsical
 Link: https://whimsical.com/
 
- GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.
+## GitHub 
+É uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.
 Link : https://github.com/
 
- Figma é um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web, com ferramentas offline adicionais para aplicações desktop para GNU/Linux, macOS e Windows
+## Figma 
+É um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web, com ferramentas offline adicionais para aplicações desktop para GNU/Linux, macOS e Windows
 Link: https://www.figma.com/
 
- Discord é um aplicativo de voz sobre IP proprietário e gratuito, projetado inicialmente para comunidades de jogos. O aplicativo Discord está disponível para os sistemas operacionais Microsoft Windows, MacOS, Android, iOS, Linux e em navegadores da Web.
+## Discord 
+É um aplicativo de voz sobre IP proprietário e gratuito, projetado inicialmente para comunidades de jogos. O aplicativo Discord está disponível para os sistemas operacionais Microsoft Windows, MacOS, Android, iOS, Linux e em navegadores da Web.
 https://discord.com/
 https://discord.com/login
 
-# ⚒️ Instalar (Ubuntu) Discord via terminal
+### ⚒️ Instalar (Ubuntu) Discord via terminal
 ```bash
 Passo 1. Abra um terminal (use as teclas CTRL + ALT + T);
 Passo 2. Use o comando abaixo para baixar o programa.baixe a última versão e salve-o com o nome discord.deb:
