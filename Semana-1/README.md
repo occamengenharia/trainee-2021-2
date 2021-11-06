@@ -1,14 +1,11 @@
 
 # 💻 Processo Trainee - Semana 1
-<!--ts-->
-    ✅* [Apresentação setor de projetos]
-    ✅* [Ferramentas utilizadas na OCCAM]
-    ✅* [Criar adcionar Foto de perfil GitHub]
-    ✅* [Criar conta Whimsical]
-    ✅* [Criar conta Figma]
-    ✅* [Criar conta e baixar Discord]
-      
-<!--te-->
+- [ ] Apresentação setor de projetos
+- [ ] Ferramentas utilizadas na OCCAM
+- [ ] Criar adcionar Foto de perfil GitHub
+- [ ] Criar conta Whimsical
+- [ ] Criar conta Figma
+- [ ] Criar conta e baixar Discord]
 
 
 # ⚙️ Passo a passo
