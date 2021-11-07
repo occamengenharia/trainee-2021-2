@@ -5,7 +5,8 @@
 - [ ] Criar adcionar Foto de perfil GitHub
 - [ ] Criar conta Whimsical
 - [ ] Criar conta Figma
-- [ ] Criar conta e baixar Discord]
+- [ ] Criar conta e baixar Discord
+- [ ] Criar conta  no Trello
 
 
 # ⚙️ Passo a passo
@@ -22,6 +23,10 @@ Link : https://github.com/
 ## Figma 
 É um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web, com ferramentas offline adicionais para aplicações desktop para GNU/Linux, macOS e Windows
 Link: https://www.figma.com/
+
+## Trello
+Trello é um aplicativo de gerenciamento de projeto baseado na web originalmente feito por Fog Creek Software em 2011.
+https://trello.com/pt-BR/home
 
 ## Discord 
 É um aplicativo de voz sobre IP proprietário e gratuito, projetado inicialmente para comunidades de jogos. O aplicativo Discord está disponível para os sistemas operacionais Microsoft Windows, MacOS, Android, iOS, Linux e em navegadores da Web.
@@ -43,7 +48,7 @@ $ sudo apt-get install -f
 ```
 # 💻 Mostre seu progresso
 Preencha o formulario a seguir e nos mostre que concluiu as tarefas semanais
-https://forms.gle/uFRVU6hs1WukyR6c8
+https://forms.gle/9VgTGg8w3BW4UAwz7
 
 
  
