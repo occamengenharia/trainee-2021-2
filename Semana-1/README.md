@@ -26,7 +26,7 @@ Link: https://www.figma.com/
 
 ## Trello
 Trello é um aplicativo de gerenciamento de projeto baseado na web originalmente feito por Fog Creek Software em 2011.
-https://trello.com/pt-BR/home
+Link: https://trello.com/pt-BR/home
 
 ## Discord 
 É um aplicativo de voz sobre IP proprietário e gratuito, projetado inicialmente para comunidades de jogos. O aplicativo Discord está disponível para os sistemas operacionais Microsoft Windows, MacOS, Android, iOS, Linux e em navegadores da Web.
