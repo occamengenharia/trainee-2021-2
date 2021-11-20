@@ -14,59 +14,59 @@ Algumas tags tem abertura e fechamento, outras apenas abertura.
 
 *<!DOCTYPE>: D*eve ser sempre a primeira a aparecer em uma página HTML para indicar ao browser qual versão da linguagem usada.
 
-*<html></html>*: é a tag que delimita o documento. Por isso todas as demais tags da página devem estar nesse espaço.
-*<head></head>*: Head é literamente a cabeça do documento, o que fica dentro dessa tag não fica visível na pagina.
+`<html></html>`: é a tag que delimita o documento. Por isso todas as demais tags da página devem estar nesse espaço.
+`<head></head>`: Head é literamente a cabeça do documento, o que fica dentro dessa tag não fica visível na pagina.
 
-*<meta>*: Representa vários tipos de metadados.São informações que descrevem o conteúdo do seu arquivo
+`<meta>`: Representa vários tipos de metadados.São informações que descrevem o conteúdo do seu arquivo
 
-*<title></title>*: Corresponde a tag de titulo, o título que fica visível na aba do navegador.
+`<title></title>`: Corresponde a tag de titulo, o título que fica visível na aba do navegador.
 
-*<body></body>*: Essa tag é o corpo do documento, nele fica a estrutura da página, como links, imagens, títulos e subtítulos, etc.
+`<body></body>`: Essa tag é o corpo do documento, nele fica a estrutura da página, como links, imagens, títulos e subtítulos, etc.
 
-*<h1></h1>*: As tags h, são utilizadas para textos e títulos o numero que acompanha é referente ao tamanho, sendo que o maior é 1 e o menor é o 6.
+`<h1></h1>`: As tags h, são utilizadas para textos e títulos o numero que acompanha é referente ao tamanho, sendo que o maior é 1 e o menor é o 6.
 
-*<p></p>*: Essa tag é utilizada para parágrafos.
+`<p></p>`: Essa tag é utilizada para parágrafos.
 
-*<br>*: É utilizada como quebra de linha
+`<br>`: É utilizada como quebra de linha
 
 <! - - > <! - - > : Tag utilizada para fazer comentários.
 
-*<img></img>*: Tag utilizada para colocar uma imagem na página.
+`<img></img>`: Tag utilizada para colocar uma imagem na página.
 
-*<a></a>*: A tag a é  utilizada para links.
+`<a></a>`: A tag a é  utilizada para links.
 
-*<form></form>*: A tag form é utilizada para criação de formulários.
+`<form></form>`: A tag form é utilizada para criação de formulários.
 
-*<input>*:  A tag input é utilizada para inserir informações em uma caixa de texto.
+`<input>`:  A tag input é utilizada para inserir informações em uma caixa de texto.
 
-*<button></button>*: Tag utilizada para inserir botões
+`<button></button>`: Tag utilizada para inserir botões
 
-*<div></div>*: é um elemento de nível de bloco.
+`<div></div>`: é um elemento de nível de bloco.
 
-*<span></span>*: é um elemento em linha.
+`<span></span>`: é um elemento em linha.
 
 # :monocle_face: Outras tags
 
 - Tabelas no HTML: Para fazer tabelas no HTML são utilizadas 3 tags:
-    - *<table></table>*: Delimita a tabela
-    - *<td></td>*: Indica as linhas
-    - *<tr></tr>*: Indica as colunas
+    - `<table></table>`: Delimita a tabela
+    - `<td></td>`: Indica as linhas
+    - `<tr></tr>`: Indica as colunas
     
     Exemplo:
     
     ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/098226b8-e799-43d0-8a2d-a16c7389524d/Untitled.png)
     
 - Listas no HTML: Para fazer listas no HTML são utilizadas as tags:
-    - *<ol></ol>*: Caso queira criar listas ordenadas.
-    - *<ul></ul>*: Listas não ordenadas.
-    - *<li></li>*: São itens da lista, e são usados dentro do <ol></ol> ou do <ul></ul>
+    - `<ol></ol>`: Caso queira criar listas ordenadas.
+    - `<ul></ul>`: Listas não ordenadas.
+    - `<li></li>`: São itens da lista, e são usados dentro do <ol></ol> ou do <ul></ul>
 - Formatação de texto:
-    - *<b></b> e <strong></strong>*: Texto em negrito.
-    - *<i></i> e <em></em>*: Texto em itálico.
-    - *<sub></sub> e <sup></sup>*: para sobrescrito e subscrito, respectivamente.
-    - *<mark></mark>*: para texto destacado.
-    - *<ins></ins> e <del></del>*: para indicar trechos que foram incluídos ou removidos.
-    - *<small></small>*:  para textos menores que o padrão.
+    - `<b></b> e <strong></strong>`: Texto em negrito.
+    - `<i></i> e <em></em>`: Texto em itálico.
+    - `<sub></sub> e <sup></sup>`: para sobrescrito e subscrito, respectivamente.
+    - `<mark></mark>`: para texto destacado.
+    - `<ins></ins> e <del></del>`: para indicar trechos que foram incluídos ou removidos.
+    - `<small></small>`:  para textos menores que o padrão.
 
 Há também tags paga inserção de audio, vídeo: <audio></audio> e <video></video>
 
@@ -89,7 +89,7 @@ Entre chaves '{ }' está o bloco de declaração que contém uma ou mais declara
 
 Seletores de: ID, CLASS, * e agrupamento.
 
-- ID : Se refere a um elemento. É exclusivo, não podendo haver mais de um `id` com o mesmo nome. Para utilizar um ID usa-se #
+- ID : Se refere a um elemento. É exclusivo, não podendo haver mais de um id com o mesmo nome. Para utilizar um ID usa-se #
 
 No CSS:
 
