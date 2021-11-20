@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+}
+.botao{
+    height: 55px;
+    width: 250px;
+    border: 0;
+
+    margin-left: 20px;
+    border-radius: 18px;
+    background-color: #72005F;
+    color: white;
+    font-size: 20px;
+    outline-style: none;
+    cursor: pointer;  
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 980px;
+    height: 100vh;
+    
+}
+
+.goat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+}
+
+
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 40px;
+}
+h1{
+    font-weight: bold;
+    font-size: 120px;
+    color: #72005F;
+}
+h2{
+    font-size: 56px;
+    color: #BAA193;
+}
