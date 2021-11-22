@@ -52,9 +52,6 @@ Algumas tags tem abertura e fechamento, outras apenas abertura.
     - `<td></td>`: Indica as linhas
     - `<tr></tr>`: Indica as colunas
     
-    Exemplo:
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/098226b8-e799-43d0-8a2d-a16c7389524d/Untitled.png)
     
 - Listas no HTML: Para fazer listas no HTML são utilizadas as tags:
     - `<ol></ol>`: Caso queira criar listas ordenadas.
@@ -229,8 +226,6 @@ No documento HTML, na linha do seletor
 
 # :mag: Links 
 [https://www.devchallenge.com.br/challenges/5f14f8d5130a5d78f89d9640/details](https://www.devchallenge.com.br/challenges/5f14f8d5130a5d78f89d9640/details)
-
-[https://www.alura.com.br/promocao/awin_10EstudeAlurax?utm_source=awin&utm_medium=site&utm_term=197989&awc=23465_1637423173_0a3dc98b434ab9d2fd0f496c76a5a4ad](https://www.alura.com.br/promocao/awin_10EstudeAlurax?utm_source=awin&utm_medium=site&utm_term=197989&awc=23465_1637423173_0a3dc98b434ab9d2fd0f496c76a5a4ad)
 
 [https://www.w3schools.com/html/default.asp](https://www.w3schools.com/html/default.asp)
 
