@@ -2,7 +2,7 @@
 
 > Nesta aula voce ira aprender sobre como instalar e dar os primeiros passos com o git 
 
-<img src="imgs/git-github.jpg" alt="demo" style="zoom:25%;" height="325"/>
+
 
 
 
