@@ -1,4 +1,4 @@
-## Manipulando a DOM do HTML
+# ⚒️ Manipulando a DOM do HTML
 
 Como discutimos anteriormente, websites sem javascript são estáticos e não possuem muita interação com o usuário. Para adicionarmos essa dinâmica em nossos sites precisamos manipular a DOM (Modelo de Objeto de Documento) do nosso documento HTML.
 
@@ -6,7 +6,7 @@ Podemos pensar da DOM como a estrutura do nosso código em HTML, onde queremos a
 
 
 
-## Tipos de dados fundamentais
+## 🎲 Tipos de dados fundamentais
 
 Quando manipulamos a DOM do HTML temos que prestar atenção nos seguintes tipos de dados:
 
@@ -19,7 +19,7 @@ Quando manipulamos a DOM do HTML temos que prestar atenção nos seguintes tipos
 
 
 
-## Seletores
+## 🖱 Seletores
 
 Para selecionar elementos na árvore de elementos do HTML utilizamos seletores, entre eles podemos citar:
 
@@ -37,7 +37,7 @@ document.querySelectorAll('seletor'); // Seleciona todos os elemento através de
 
 
 
-## Eventos
+## 🎬 Eventos
 
 Podemos adicionar eventos para nossos elementos html, através da função `addEventListener`. Alguns comandos básicos desse método são:
 
