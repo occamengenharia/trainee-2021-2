@@ -361,5 +361,3 @@ adicionar2(10).then(v => {
 - [ ] Nas configurações do seu perfil insira o clan `OCCAM Engenharia`
 
 - [ ] Agora se desenvolva, pratique e veja o progresso dos seus colegas!
-
-  ![image-20211203110856161](/home/user/.config/Typora/typora-user-images/image-20211203110856161.png)
