@@ -1,5 +1,5 @@
 
-# Noções básicas  :hatching_chick:
+# Noções básicas NodeJs :hatching_chick:
 ### O que é :grey_question:
 - Não é uma linguagem de programação nem um framework
 - É na verdade uma Plataforma de aplicação
