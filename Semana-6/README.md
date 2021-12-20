@@ -48,3 +48,9 @@
     - Podemos começar de qualquer forma é bem flexivél
     - Facíl de aprender e para criar uma base sólida 
     - Micro-serviços (dividir uma aplicação grande em pequenas aplicações)
+
+
+# ☑️ Mostre seu progresso
+
+- Leia o seguinte artigo para discutirmos após as férias 
+  -  https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
