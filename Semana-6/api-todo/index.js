@@ -2,12 +2,14 @@ const express = require("express");
 const uuid = require("uuid");
 const app = express();
 
-const todos = [{id: uuid.v4(), name: "fazer pão de batata", date: new Date(), done: false}];
+const todos = [
+  { id: uuid.v4(), name: "fazer pão de batata", date: new Date(), done: false },
+];
 
 app.use(express.json());
 
 app.post("/todos", (request, response) => {
-  const todo = request.body;
+  const todo = { ...request.body, id: uuid.v4() };
 
   todos.push(todo);
 
@@ -21,25 +23,25 @@ app.get("/todos", (request, response) => {
 app.get("/todos/:id", (request, response) => {
   const todoId = request.params.id;
 
-  const todo = todos.find(t => t.id===todoId);
+  const todo = todos.find((t) => t.id === todoId);
 
-  if(!todo) {
-    return response.status(404).json({error: "todo not found"});
+  if (!todo) {
+    return response.status(404).json({ error: "todo not found" });
   }
-  
+
   return response.json(todo);
 });
 
 app.delete("/todos/:id", (request, response) => {
   const todoId = request.params.id;
 
-  const todo = todos.find(t => t.id===todoId);
+  const todo = todos.find((t) => t.id === todoId);
 
-  if(!todo) {
-    return response.status(404).json({error: "todo not found"});
-  } 
+  if (!todo) {
+    return response.status(404).json({ error: "todo not found" });
+  }
 
-  todos = todos.filter(t=> t.id !==todoId);
+  todos = todos.filter((t) => t.id !== todoId);
 
   return response.status(204).send();
 });
@@ -47,18 +49,18 @@ app.delete("/todos/:id", (request, response) => {
 app.put("/todos/:id", (request, response) => {
   const todoId = request.params.id;
 
-  const indexTodo = todos.findIndex(t => t.id===todoId);
+  const indexTodo = todos.findIndex((t) => t.id === todoId);
 
-  if(indexTodo<0) {
-    return response.status(404).json({error: "todo not found"});
-  } 
+  if (indexTodo < 0) {
+    return response.status(404).json({ error: "todo not found" });
+  }
 
   const partialTodo = request.body;
 
-  const updatedTodo = {...todos[indexTodo], partialTodo};
+  const updatedTodo = { ...todos[indexTodo], partialTodo };
 
   todos[indexTodo] = updatedTodo;
-  
+
   return response.json(updatedTodo);
 });
 
