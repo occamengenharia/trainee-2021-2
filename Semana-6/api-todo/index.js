@@ -1,67 +1,52 @@
-const express = require("express");
+
+const { request } = require('express');
+const express = require('express');
+
 const uuid = require("uuid");
+
 const app = express();
 
-const todos = [
-  { id: uuid.v4(), name: "fazer pão de batata", date: new Date(), done: false },
-];
+
+
+var ToDoList = [{id : uuid.v4()  ,name: "lavar cachorro", createdAt : new Date()  , done :false },   ]
 
 app.use(express.json());
 
-app.post("/todos", (request, response) => {
-  const todo = { ...request.body, id: uuid.v4() };
+app.get('/showToDo',(request,response)=>{
+  
+  return response.json(ToDoList);
+} )
 
-  todos.push(todo);
+app.post('/post',(request,response)=>{
+  const newTask = request.body.task; 
 
-  return response.json(todo);
-});
+  const todo = {id : uuid.v4()  ,name: newTask, createdAt : new Date()  , done :false } ;
+  
+  ToDoList.push(todo);
+  return response.json(ToDoList);
+} )
 
-app.get("/todos", (request, response) => {
-  return response.json(todos);
-});
+app.delete('/delete/:id',(request,response)=>{
+  var TaskId = request.params.id;
 
-app.get("/todos/:id", (request, response) => {
-  const todoId = request.params.id;
+   ToDoList = ToDoList.filter((task)=> task.id !==TaskId);
 
-  const todo = todos.find((t) => t.id === todoId);
+   return response.json(ToDoList);
 
-  if (!todo) {
-    return response.status(404).json({ error: "todo not found" });
-  }
+  })
 
-  return response.json(todo);
-});
-
-app.delete("/todos/:id", (request, response) => {
-  const todoId = request.params.id;
-
-  const todo = todos.find((t) => t.id === todoId);
-
-  if (!todo) {
-    return response.status(404).json({ error: "todo not found" });
-  }
-
-  todos = todos.filter((t) => t.id !== todoId);
-
-  return response.status(204).send();
-});
-
-app.put("/todos/:id", (request, response) => {
-  const todoId = request.params.id;
-
-  const indexTodo = todos.findIndex((t) => t.id === todoId);
-
-  if (indexTodo < 0) {
-    return response.status(404).json({ error: "todo not found" });
-  }
-
-  const partialTodo = request.body;
-
-  const updatedTodo = { ...todos[indexTodo], partialTodo };
-
-  todos[indexTodo] = updatedTodo;
-
-  return response.json(updatedTodo);
-});
-
-app.listen(3333, () => console.log("server running on http://localhost:3333"));
+  app.put('/put/:id',(request,response)=>{
+    var TaskId = request.params.id;
+  
+     ToDoList.forEach(task =>{
+      if(TaskId === task.id)
+      
+      {
+        task.done = true;
+      }
+    })
+  
+     return response.json(ToDoList);
+  
+    })
+app.listen(3000, () => console.log('servidor rodando na porta 3000'))
