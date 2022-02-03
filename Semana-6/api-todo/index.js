@@ -6,7 +6,7 @@ const app = express();
 
 var ToDoList = [
     {
-        name: "Cortar a grama"
+        name: "Cortar o Tratorzão"
         ,
         id: uuid.v4()
         ,
@@ -45,7 +45,8 @@ app.put('/ConcluirPorId/:id', (request, response)=> {
             return response.json(ToDoList)
         }
     })
-    return response.json('Erro 404 - Id Não encontrado')
+    response.status(404)
+    throw new Error('Id não encontrado')
 })
 
 app.delete('/DeletarPrimeira', (request, response) => {
@@ -65,8 +66,9 @@ app.delete('/DeletarPorId/:id', (request, response) => {
             ToDoList = ToDoList.filter((task)=> task.id !==id)
             return response.json(ToDoList)
         }
-    })
-    return response.json('Erro 404 - Id Não encontrado')
+    }) 
+    response.status(404)
+    throw new Error('Id não encontrado')
 })
 
 app.listen(3000, ()=> console.log("o servidor está on na porta 3000") );
