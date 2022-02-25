@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { HiOutlineTrash } from 'react-icons/hi'
 import { Page, Title, Input, Inputcheck, Taskactions } from "./styles";
 import api from '../../services/api'
+import axios from "axios";
 
 
 function InputTasks() {
@@ -14,40 +15,54 @@ function InputTasks() {
         </Input>
     )
 }
-function InputTaskscheck({name, done}) {
+function InputTaskscheck({ name, done, handledelete,put}) {
+    
     return (
         <Taskactions>
-            <HiOutlineTrash />
+            <HiOutlineTrash onClick={handledelete}/>
             <Inputcheck htmlFor={name}>
-                <input type="checkbox" id={name} defaultChecked = {done}/>
+                <input type="checkbox" id={name} checked={done === true ? true : undefined} defaultChecked={done} onChange={put }/>
                 <span />
                 {name}
             </Inputcheck>
-
-
         </Taskactions>
     )
 }
+
+   
+   
+
+
 function Tasks() {
-    const [tasks,setTasks] = useState([])
-    const handleGetTasks = () =>{
+    const [tasks, setTasks] = useState([])
+    const handleGetTasks = () => {
         api.get('/task')
-        .then (response=>{
-            setTasks(response.data)
-        }).catch((error)=>{
-            console.log(error)
-        })
+            .then(response => {
+                setTasks(response.data)
+            }).catch((error) => {
+                console.log(error)
+            })
     }
-    useEffect(handleGetTasks,[])
+    function deletar(id){
+    
+        api.delete('/task/'+id )
+        handleGetTasks()
+        
+    }
+    function put(task){
+        api.put('/task/'+task.id,{done: !task.done})
+        handleGetTasks()
+        
+    }
+    useEffect(handleGetTasks, [])
     const handleSubmit = async event => {
         event.preventDefault()
         const { value } = event.target.elements[0]
-        await api.post('/task', { name: value }).then(()=>{
-            handleSubmit()
-        }).catch((error)=>{
+        await api.post('/task', { name: value }).then(() => {
+            handleGetTasks()
+        }).catch((error) => {
             console.log(error)
         })
-
     }
     return (
         <Page>
@@ -56,11 +71,13 @@ function Tasks() {
                 <InputTasks />
             </form>
             {
-                tasks.map(task=>(
-                    <InputTaskscheck name = {task.name} done={task.done}/>
-                ),)
+                tasks.map(task => (
+                    <InputTaskscheck name={task.name} done={task.done} handledelete={()=>{deletar(task.id)}} put={()=>{put(task)}} />
+                ))
             }
         </Page>
     )
+
 }
+
 export default Tasks
