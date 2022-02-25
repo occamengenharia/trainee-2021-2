@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Title = styled.h1`
-    font-size: 108px;
+    font-size: 96px;
     color: #5e5e5e;
     margin-bottom: 80px;
 `
 export const FieldInput = styled.div`
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
     
     > input{
         border: none;
@@ -36,8 +37,9 @@ export const FieldInputCheck = styled.label`
     align-items: center;
     font-size: 24px;
     font-weight: 400;
-    align-items: center;
-    gap: 16px;
+    gap: 32px;
+    margin-left: 8px;
+
     position: relative;
 
     > span{
@@ -65,16 +67,49 @@ export const FieldInputCheck = styled.label`
     input:checked ~span{
         background: #1e9cea;
     }
+
+    > svg{
+        position: absolute;
+        left: -48px;
+        color: #5E5E5E;
+        font-size: 24px;
+        margin: 8px;
+    }
     
+`
+
+export const InputLabel = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    
+    
+    > svg{
+        color: #5E5E5E;
+        font-size: 24px;
+        margin: 8px;
+    }   
 `
 
 export const Page = styled.div`
     height: 100vh;
+    
     margin: none;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+
+`
+
+export const Conteiner = styled.div`
+    width: 80vw;
+    
+    margin: none;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 
 `
 

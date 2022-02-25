@@ -1,6 +1,6 @@
 import React from "react";
 import reactRouterDom from "react-router-dom";
-import { ButtonLink, Page, SubTitle, TextButtonLink, Title } from "./styles";
+import { ButtonLink, Page, SubTitle, Title } from "./styles";
 import {Link} from "react-router-dom";
 
 

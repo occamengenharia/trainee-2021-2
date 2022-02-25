@@ -12,8 +12,8 @@ export const SubTitle = styled.h2`
 `
 
 export const ButtonLink = styled(Link)`
-    width: 400px;
-    height: 128px;
+    width: 384px;
+    height: 112px;
     background-color: #B47AEA;
     border-radius: 32px;
     margin: 32px;
@@ -26,9 +26,6 @@ export const ButtonLink = styled(Link)`
     color: #ffffff;
     `
 
-export const TextButtonLink = styled.h2`
-
-`
 
 export const Page = styled.div`
     height: 100vh;
