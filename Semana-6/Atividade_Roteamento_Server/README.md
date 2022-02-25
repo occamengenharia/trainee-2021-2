@@ -240,3 +240,246 @@ node index.js
 - Entre no navegador e acesse a Rota : http://localhost:3000/
 - Se apareceu : {"ok":true}
 - **PARABÉNS** :tada: :clinking_glasses: seu primeiro servidor está rodando
+
+## Final Quest :8ball:
+### Termine de desenvolver API (To do list)
+
+- [ ] Defina uma rota utilizando o método GET que mostre todas as tarefas 
+- [ ] Defina uma rota utilizando o método POST que adicione uma nova tarefa
+- [ ] Defina uma rota utilizando o método DELETE que delete uma tarefa
+- [ ] Defina uma rota utilizando o método PUT que altera uma tarefa não feita para feita
+- [ ] erro 404 para tarefas não encontradas(apeas PUT e DELETE)
+
+- A ideia dessa atividade é brincar com requisições e respostas em uma API  , utilizando um vetor de tarefas
+- Abaixo seguem exemplos e dicas para fazer a mágica acontecer 
+- Na pasta API_todo contém um exemplo de mais ou menos como ficaria
+- Tente desvendar e desenvolver os metodos utilizando a documentaçao sem olhar o exemplo final, assim você explora a maior parte sosinho aumentando o aprendizado
+>[Array javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array)
+>[Documentação Express](https://expressjs.com/en/4x/api.html)
+
+### UUID (universal user ID) :globe_with_meridians:
+>UUID é um dado de 128 bits gerado aleatoriamente , em tese ele é unico e chance de ser duplicado eh desconsiderável
+>[o quão unico é o UUID(StackOverflow)](https://stackoverflow.com/questions/1155008/how-unique-is-uuid)
+
+- Para usar  o UUID , segue o rocedimento padrão:
+- Usar o npm ou yarn para adicionar a dependencia e importar
+- No terminal :
+```
+yarn add uuid
+npm install uuid
+```
+- No script :
+ ```
+const uuid = require("uuid");
+```
+- Como não vamos usar nenhum banco de dados , vamos armazenar as tarefas na sua máquina mesmo
+- Vamos usar um vetor de JSONs
+- Esse vetor precisa ter um id, nome da tarefa, a data, e um booleano para saber se foi feita ou não
+
+<details><summary>Gerar uuid Exemplo</summary>
+	
+```
+ { id: uuid.v4(), ....
+	}
+- .v4() utiliza a quarta versão para gerar a chave aleatória
+```
+	
+</details>
+
+<details><summary>Gerar data Exemplo  </summary>
+	
+```
+ { date: new Date(), ....
+	}
+```
+	
+</details>
+
+<details><summary>Estrutura básica de um JSON exemplo</summary>
+	
+```
+{ 
+  "firstName": "Jotaro", 
+  "id": "12345", 
+  "age": 20, 
+  "email":"OraOraOra@yahoo.com"
+	 }
+ 
+```
+	
+</details>
+
+<details><summary>array  JSON exemplo</summary>
+
+```
+	
+[ { "name": "Jotaro Kujo", 
+  "email": "OraOraOra@yahoo.com"  }
+	,
+	 
+{ "name": "Dio Brando", 
+  "email": "Zaworudo@gmail.com"  }  ] 
+```
+
+</details>
+<details><summary>Como acessar campos de um JSON?</summary>
+
+```
+	
+Const  Users =[ { "name": "Jotaro Kujo", 
+  "email": "OraOraOra@yahoo.com"  }
+	,
+	 
+{ "name": "Dio Brando", 
+  "email": "Zaworudo@gmail.com"  }  ] 
+```
+	
+- Dado o array acima digamos que você deseja encontrar o nome Jotaro Kujo e retornar o email dele
+- se fosse um JSON apenas e num um vetor deles poderiamos facilmente acessar com User.email(acessando m campo do Objeto)	
+- Para esse vetor teremos que acessar cada Objeto dentro dele	
+```
+	
+Users.forEach(user =>{ })	
+```	
+- Essa coisa estranha ()=>{} é chamada de arrow function , ela funciona como uma função normal que recebe parâmetros e retorna algo 
+	- Dentro dos parenteses ficam os parâmetros da função
+	- Dentro do colchetes ficam as instruções
+- Como usamos o metodo forEach , ele vai iterar por cada objeto desse vetor(Usuários), e chamar uma função (nossa arrow function)	
+- Existem muitas outras funçoes uteis para nosssa situação :find ,findIndex ,map ,etc..
+- Explore a documentação e seja criativo
+- [Array.forEach](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+	
+```
+var Jotaro_email;	
+Users.forEach(user =>{
+	if(user.name === "Jotaro Kujo")
+      
+      {
+	Jotaro_email = user.email; 
+        console.log("email : " + user.email );
+      }
+	})	
+```
+	
+- Essa é uma maneira de acessar um campo específico de um vetor de Obejos JSON mas isso pode ser feito de inúmeras maneiras
+	
+</details>
+
+<details><summary> parametro passados pela URL exemplo</summary>
+	
+```
+app.put('/put/:name',(request,response)=>{
+    var Nome = request.params.name;
+	}
+```
+- Nesse exemplo temos uma rota apenas com requisição e sem resposta
+- Perceba que após a "/" em  ":" isso indica que oque vem depois é um parametro da requisição passado pelo cliente
+- Nesse caso estamos recebendo uma string e estamos chamando de id e colocando ela na variável nome 	
+</details>
+
+### Array(exemplo final)
+<details>
+
+```
+var ToDoList =[
+{ id : uuid.v4() , name :"plantar rucula" , createdAt : new Date(), done :false} ,]
+```
+- o array foi declarado com apenas uma tarefa , para posteriormente adicionarmos tarefas com o metodo put	
+	
+</details>	
+
+### GET(exemplo final)
+
+<details>
+	
+```
+app.get('/showToDo',(request,response)=>{
+  
+  return response.json(ToDoList);
+} )
+	
+```
+	
+- A rota mais simples de todas,
+- basta retornar uma resposta no formato json ()
+</details>	
+	
+
+### POST(exemplo final)
+
+<details>
+	
+```
+app.post('/post',(request,response)=>{
+  const newTask = request.body.task; 
+
+  const todo = {id : uuid.v4()  ,name: newTask, createdAt : new Date()  , done :false } ;
+  
+  ToDoList.push(todo);
+  return response.json(ToDoList);
+} )
+```
+
+- request.body  se refere ao  json que estamos enviando através do cliente (sugiro utilizar o insomnia para testar requisições assim)
+ 
+```
+{ "task": "pao de batata" }
+```
+	
+- Ele poderia ate conter mais campos mas precisamos apenas do campo "task"(request.body.task) para adicionar a nova tarefa
+- Na terceira linha criamos todo o Objeto que sera armazenado no vetor de tarefas
+- Mais uma função util , push adiciona um ou mais elemntos no final de uma array
+- Deve aparecer para o cliente as duas tarefas com todos os seus campos  
+	
+</details>
+	
+### PUT(exemplo final)
+
+<details>
+	
+```
+app.put('/put/:id',(request,response)=>{
+    var TaskId = request.params.id;
+  
+     ToDoList.forEach(task =>{
+      if(TaskId === task.id)
+      
+      {
+        task.done = true;
+      }
+    })
+  
+     return response.json(ToDoList);
+  
+    })
+```
+	
+- Dessa vez vamos precisar identificar qual é a tarefa que queremos mudar para completa e vamos fazer isso com o id
+- Quando você acessar a rota http://localhost:3000/showToDo , todas as tarefas aparecerão
+- Copie o id da tarefa que você deseja aterar
+- http://localhost:3000/put/id , cole no lugar de id
+- TaskId recebe esse numero e apartir dele vamos procurar o objeto dentro do array com um laço forEach
+- quado TaskID for igual ao id da URL , basta mudar o valor
+
+</details>
+
+### DELETE(exemplo final)
+
+<details>
+	
+```
+app.delete('/delete/:id',(request,response)=>{
+  var TaskId = request.params.id;
+
+   ToDoList = ToDoList.filter((task)=> task.id !==TaskId);
+
+   return response.json(ToDoList);
+
+  })	
+```
+	
+- A unica coisa nova nesse exemplo é oa fnção filter
+- Essa função cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida
+- Todas as tarefas com id diferente do request.body.id  farão parte do novo array
+- Tarefa excluida com sucesso
+</details>

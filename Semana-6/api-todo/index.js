@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 const { response, request } = require("express");
 const express = require("express");
+=======
+
+const { request } = require('express');
+const express = require('express');
+
+>>>>>>> 2401b2df40c238dd8c8957c0875077d47d1b1c2d
 const uuid = require("uuid");
 
 const app = express();
 
+<<<<<<< HEAD
 var ToDoList = [
     {
         name: "Cortar o Tratorzão"
@@ -73,3 +81,49 @@ app.delete('/DeletarPorId/:id', (request, response) => {
 
 app.listen(3000, ()=> console.log("o servidor está on na porta 3000") );
 
+=======
+
+
+var ToDoList = [{id : uuid.v4()  ,name: "lavar cachorro", createdAt : new Date()  , done :false },   ]
+
+app.use(express.json());
+
+app.get('/showToDo',(request,response)=>{
+  
+  return response.json(ToDoList);
+} )
+
+app.post('/post',(request,response)=>{
+  const newTask = request.body.task; 
+
+  const todo = {id : uuid.v4()  ,name: newTask, createdAt : new Date()  , done :false } ;
+  
+  ToDoList.push(todo);
+  return response.json(ToDoList);
+} )
+
+app.delete('/delete/:id',(request,response)=>{
+  var TaskId = request.params.id;
+
+   ToDoList = ToDoList.filter((task)=> task.id !==TaskId);
+
+   return response.json(ToDoList);
+
+  })
+
+  app.put('/put/:id',(request,response)=>{
+    var TaskId = request.params.id;
+  
+     ToDoList.forEach(task =>{
+      if(TaskId === task.id)
+      
+      {
+        task.done = true;
+      }
+    })
+  
+     return response.json(ToDoList);
+  
+    })
+app.listen(3000, () => console.log('servidor rodando na porta 3000'))
+>>>>>>> 2401b2df40c238dd8c8957c0875077d47d1b1c2d
