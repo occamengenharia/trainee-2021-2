@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Title, Page, InputTaskField, InputCheckField } from './styles.js'
+import { Title, Page, InputTaskField, InputCheckField, InputDeleteBtn } from './styles.js'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
-import { BsTrash } from 'react-icons/bs'
+// import { BsTrash } from 'react-icons/bs'
+import { BiTrash } from "react-icons/bi";
 import api from '../../services/api.js'
 
 function InputTask(){
@@ -13,7 +14,7 @@ function InputTask(){
     ) 
 }
 
-function InputCheck({ name, done, id, onUpdate }){
+function InputCheck({ name, done, id, onUpdate, handleDeleteTask }){
     const handleCheckTask = ()=>{
         api.put(`/task/${id}`, {done: !done})
         .then(()=> {
@@ -26,21 +27,16 @@ function InputCheck({ name, done, id, onUpdate }){
 
     return(
         <div>
-            {/* Erro está aqui na tag <button> */}
-            <button type="button"><BsTrash/></button>
+            <InputDeleteBtn onClick={handleDeleteTask}>
+                <BiTrash/>
+            </InputDeleteBtn>
             <InputCheckField htmlFor={id}> 
-            <input
-                type="checkbox" 
-                id={id} 
-                placeholder="Add a new task" 
-                defaultChecked={done} 
-                checked={done ? true : undefined}
-                onChange={handleCheckTask}
-            />
+            <input type="checkbox" id={id} placeholder="Add a new task" checked={done ? true : undefined} onChange={handleCheckTask}/>{/* defaultChecked={done} */}
             <span/>
             { name }
-            </InputCheckField>
+            </InputCheckField>    
         </div>
+        
     )
 }
 
@@ -70,19 +66,27 @@ function Task(){
             })
     }
 
+    const handleDeleteTask = async (id) => { 
+        await api.delete('/task/'+id)
+        handleGetTasks();
+    }
+
     return(
         <Page>
             <Title>TaskDo</Title>
             <form onSubmit={handleSubmit}>
-            <InputTask />
+                <InputTask />
             </form>
             {
                 tasks.map(task=>(
-                    <InputCheck {...task} onUpdate={handleGetTasks}/>
+                    <InputCheck {...task} onUpdate={handleGetTasks} handleDeleteTask={()=>{handleDeleteTask(task.id)}}
+                    />
                 ))
             }
         </Page>
     )
 }
+
+
 
 export default Task

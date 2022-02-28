@@ -44,7 +44,6 @@ export const InputCheckField = styled.label`
         gap: 16px;
         position: relative;
         > span{
-            left: 36px;
             position: absolute;
             background: white;
             border: 1px solid #139cea;
@@ -68,4 +67,9 @@ export const InputCheckField = styled.label`
         input:checked ~span{
             background: #1E9CEA;
         }
+`
+export const InputDeleteBtn = styled.button`
+    border: none;
+    float: left;
+    margin: 7px;
 `
