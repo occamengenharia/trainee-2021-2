@@ -67,7 +67,7 @@ function Task(){
     }
 
     const handleDeleteTask = async (id) => { 
-        await api.delete('/task/'+id)
+        await api.delete(`/task/${id}`)
         handleGetTasks();
     }
 
