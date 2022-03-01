@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import { Page, Title, FieldInput, FieldInputCheck } from "./styles";
-import {AiFillPlusCircle} from 'react-icons/ai'
-import api from '../../services/api'
+import { Page, Title, FieldInput, FieldInputCheck, TaskExec, Container } from "./styles";
+import {HiOutlineTrash} from 'react-icons/hi';
+import {AiFillPlusCircle} from 'react-icons/ai';
+import api from '../../services/api';
 
 function InputTask(){
     return (
@@ -12,20 +13,28 @@ function InputTask(){
     )
 }
 
-function InputCheck({name, done, id, onUpdate}){
+function InputCheck({name, done, id, onUpdate, TaskDelete, onChange}){
     const handleCheckTask = () => {
         api.put(`/task/${id}`, {done: !done}).then(() => {
             onUpdate()
-        }) .catch(error => {
+        }).catch(error => {
             console.log(error)
         })
     }
     return (
+        <TaskExec>
+        <HiOutlineTrash onClick={TaskDelete}/>
         <FieldInputCheck htmlFor={name}>
-            <input type= "checkbox" id={name} defaultChecked={done} checked={done === true ? true: undefined} onChange={handleCheckTask}/> 
+            <input 
+                type= "checkbox" 
+                id={name} 
+                defaultChecked={done} 
+                checked={done === true ? true: undefined} 
+                onChange={onChange}/> 
             <span />
             {name}  
         </FieldInputCheck>
+        </TaskExec>
     )
 }
 
@@ -40,6 +49,19 @@ function Tasks() {
             console.log(error)
         })
     }
+
+    const TaskDelete = async(id) =>{
+        await api.delete('/task/'+id)
+        handleGetTasks()
+    }
+
+    const TaskDone = async (id, done)=>{
+        await api.put('/task/'+id, {done: done})
+        handleGetTasks()
+
+    }
+
+
     useEffect(handleGetTasks,[])
     const handleSubmit = async event => {
         event.preventDefault()
@@ -53,15 +75,23 @@ function Tasks() {
     return (
         <Page>
             <Title>TaskDo</Title>
+            <Container>
+
             <form onSubmit={handleSubmit}>
                 <InputTask />
             </form>
             {
                 tasks.map(task => (
 
-                    <InputCheck {...task} onUpdate={handleGetTasks}/>
+                    <InputCheck {...task} 
+                    TaskDelete={()=>{TaskDelete(task.id)}}
+                    onUpdate={handleGetTasks}
+                    onChange={()=> {TaskDone(task.id, task.done)}}
+                    
+                    />
                 ))
             }
+            </Container>
         </Page>
     )
 

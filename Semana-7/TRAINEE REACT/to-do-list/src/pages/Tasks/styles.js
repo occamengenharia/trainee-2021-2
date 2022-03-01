@@ -42,6 +42,7 @@ export const FieldInputCheck = styled.label`
    gap: 16px;
    position: relative;
    
+   
    > span{
        position: absolute;
        background: white;
@@ -70,6 +71,25 @@ export const FieldInputCheck = styled.label`
        background: #1E9CEA;
     }
 `
+export const TaskExec = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    >svg {
+        color: #808080;
+        font-size: 26px;
+    }
+
+`
+
+export const Container = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    gap: 15px;
+
+`  
 
 export const Page = styled.div`
     display: flex;
